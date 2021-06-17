@@ -17,6 +17,8 @@ export default class DeviceStore {
             {id: 3, name: 'device 3', price: 2700, rating: 4, img: `https://cdn.comfy.ua/media/catalog/product/cache/5/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/w/w/wwru_iphone12_q321_purple_pdp-image-1b_2.jpg`},
             {id: 4, name: 'device 4', price: 2800, rating: 3, img: `https://cdn.comfy.ua/media/catalog/product/cache/5/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/w/w/wwru_iphone12_q321_purple_pdp-image-1b_2.jpg`}
         ]
+        this._setSelectedType = {}
+        this._setSelectedBrand = {}
         makeAutoObservable(this)
     }
 
@@ -32,6 +34,14 @@ export default class DeviceStore {
         this._devices = devices
     }
 
+    setSelectedType(type) {
+        this._setSelectedType = type
+    }
+
+    setSelectedBrand(Brand) {
+        this._setSelectedBrand = Brand
+    }
+
     get types() {
         return this._types
     }
@@ -42,5 +52,13 @@ export default class DeviceStore {
 
     get devices() {
         return this._devices
+    }
+
+    get selectedType() {
+        return this._setSelectedType
+    }
+
+    get selectedBrand() {
+        return this._setSelectedBrand
     }
 }
