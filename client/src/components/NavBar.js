@@ -13,6 +13,7 @@ const NavBar = observer(() => {
     const logOut = () => {
         user.setUser({})
         user.setAuth(false)
+        localStorage.removeItem('token')
         history.push(SHOP_ROUTE)
     }
 
